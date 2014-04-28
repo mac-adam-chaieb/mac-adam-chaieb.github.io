@@ -5,9 +5,9 @@
 var $name = $("<h1 id='name'>Mohamed Adam Chaieb</h1>");
 var $pic = $("<img id='profile' src='./profile.jpg'></img>");
 var $header = $("<p id='head'>I like to hack things.</p>");
-var $bar = $("<div id='bar'><ul><li><a href='https://www.linkedin.com/in/mohamedadamchaieb'><i class='fa fa-linkedin-square fa-4x'></i></a></li>"
-	+ "<li><a href='https://github.com/mac-adam-chaieb'><i class='fa fa-github-square fa-4x'></i></a></li>"
-	+ "<li><a href='https://twitter.com/AngryAlgerian'><i class='fa fa-twitter-square fa-4x'></i></a></li></ul></div>");
+var $bar = $("<div id='bar'><a href='https://www.linkedin.com/in/mohamedadamchaieb'><i class='fa fa-linkedin-square fa-4x'></i></a>"
+	+ "<a href='https://github.com/mac-adam-chaieb'><i class='fa fa-github-square fa-4x'></i></a>"
+	+ "<a href='https://twitter.com/AngryAlgerian'><i class='fa fa-twitter-square fa-4x'></i></a></div>");
 
 
 

@@ -1,11 +1,16 @@
+/*****************************************************
+*	Designed and programmed by Mohamed Adam Chaieb.
+*****************************************************/
+
 body {
-	margin: 20% auto 0 auto;
+	margin: 5% auto 0 auto;
 	vertical-align: middle;
 	width: 70%;
+	font-family: 'Press Start 2P';
 	background-color: #383838;
 }
 
-a {
+.button {
 	position: relative;
 	font-family: 'VT323';
 	display:block;
@@ -23,10 +28,11 @@ a {
 	border-color: white;
 }
 
-a:HOVER {
+.button:HOVER {
 	color: #26ff00;
 	top: 3px;
 	border-bottom-width: 2px;
+	cursor: default;
 }
 
 @-webkit-keyframes typing {
@@ -39,6 +45,16 @@ a:HOVER {
     to { width:35em }
 }
 
+@-webkit-keyframes typing2 {
+    from { width: 0 }
+    to { width:400px }
+}
+
+@-moz-keyframes typing2 {
+    from { width: 0 }
+    to { width:400px }
+}
+
 @-webkit-keyframes blink-caret {
     from, to { border-color: transparent }
     50% { border-color: #26ff00 }
@@ -49,19 +65,81 @@ a:HOVER {
     50% { border-color: #26ff00 }
 }
 
-h1 { 
-    font-size: 40px;
-    font-family: 'Press Start 2P';
+#greeting { 
+    font-size: 34px;
     width: 34em;
     padding: 20px 0 0 0;
     white-space:nowrap;
     overflow:hidden;
-    margin: 0 auto 50px 0;
+    margin: 30% auto 50px 0;
     color: white;
     border-right: 1em solid #26ff00;
     
-    -webkit-animation: typing 3s steps(34, end), /* # of steps = # of characters */
+    -webkit-animation: typing 2s steps(34, end), /* # of steps = # of characters */
                         blink-caret 1s step-end infinite;
-    -moz-animation: typing 3s steps(34, end), /* # of steps = # of characters */
+    -moz-animation: typing 2s steps(34, end), /* # of steps = # of characters */
                         blink-caret 1s step-end infinite;
+}
+
+#profile {
+	display: none;
+	height: 400px;
+	width: 400px;
+	border-radius: 200px;
+	-webkit-border-radius: 200px;
+	-moz-border-radius: 200px;
+	margin: 0 auto 0 auto;
+}
+
+#name {
+	font-size: 34px;
+ 	display: none;
+    color: white;
+    width: 100%;
+    text-align: center;
+}
+
+#head {
+	font-size: 18px;
+	width: 400px;
+	margin: 0 auto 0 auto;
+	border-right: 1em solid #26ff00;
+	overflow:hidden;
+	white-space:nowrap;
+	color: white;
+	padding: 10px 0 0 0;
+	-webkit-animation: typing2 2s steps(22, end), /* # of steps = # of characters */
+                        blink-caret 1s step-end infinite;
+    -moz-animation: typing2 2s steps(22, end), /* # of steps = # of characters */
+                        blink-caret 1s step-end infinite;
+}
+
+#bar {
+	display: none;
+	width:400px;
+	margin: 50px auto 0 auto;
+}
+
+#bar ul {
+width:80%;
+margin:0 auto 0 auto;
+}
+
+#bar ul li {
+float:left;
+color: white;
+padding:0 20px 0 20px;
+height:40px;
+list-style:none;
+display:block;
+line-height:30px;
+text-align:center;
+}
+
+i {
+	color: white;
+}
+
+i:HOVER {
+	color: #26ff00;
 }

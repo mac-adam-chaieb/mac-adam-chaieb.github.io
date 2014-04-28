@@ -136,3 +136,9 @@ i {
 i:HOVER {
 	color: #26ff00;
 }
+
+@media (max-width: 1060px) {
+	#greeting {
+		font-size: 24px;
+	}
+}

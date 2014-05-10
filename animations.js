@@ -8,6 +8,7 @@ var $pic = $("<img id='profile' src='./profile.jpg'></img>");
 var $header = $("<p id='head'>I like to hack things.</p>");
 var $bar = $("<div id='bar'><a href='https://www.linkedin.com/in/mohamedadamchaieb'><i class='fa fa-linkedin-square fa-4x'></i></a>"
 	+ "<a href='mailto:mohamed.chaieb@mail.mcgill.ca'><i class='fa fa-envelope fa-4x'></i></a>"
+	+ "<a href='./resume.pdf'><i class='fa fa-file-text fa-4x'></i></a>"
 	+ "<a href='https://github.com/mac-adam-chaieb'><i class='fa fa-github-square fa-4x'></i></a></div>");
 
 $(document).ready(function() {

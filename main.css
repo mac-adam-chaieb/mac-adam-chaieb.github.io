@@ -1,5 +1,7 @@
 /*****************************************************
+*
 *	Designed and programmed by Mohamed Adam Chaieb.
+*
 *****************************************************/
 
 body {
@@ -82,8 +84,8 @@ body {
 
 #profile {
 	display: none;
-	height: 350px;
-	width: 350px;
+	height: 300px;
+	width: 300px;
 	border-radius: 175px;
 	-webkit-border-radius: 175px;
 	-moz-border-radius: 175px;
@@ -91,7 +93,7 @@ body {
 }
 
 #name {
-	font-size: 34px;
+	font-size: 1.75em;
  	display: none;
     color: white;
     width: 100%;
@@ -131,9 +133,10 @@ body {
 
 i {
 	color: white;
+	font-size: 3.5em;
 }
 
-i:HOVER {
+i:hover {
 	color: #26ff00;
 }
 
@@ -142,4 +145,21 @@ i:HOVER {
 		font-size: 18px;
 		padding-top: 10px;
 	}
+}
+
+textarea {
+	display: none;
+	margin: 50px 5% 0 5%;
+	background-color: black;
+	color: #26ff00;
+	width: 90%;
+	height: 200px;
+	line-height: 20px;
+	font-size: 1.2em;
+	border: 1px solid white;
+	border-radius: 10px;
+	padding: 10px;
+	outline: none;
+	vertical-align: baseline;
+	resize: none;
 }

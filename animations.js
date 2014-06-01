@@ -18,7 +18,7 @@ var $shell = $("<textarea id='shell' spellcheck='false'>Welcome to the Moe Shell
 
 //the index of
 var shellOffset = 0;
-var lineOffset = 11;
+var lineOffset = 10;
 var shell;
 
 $(document).ready(function() {
@@ -31,14 +31,12 @@ $(document).ready(function() {
 		console.log("Line offset: "+lineOffset)
 		console.log("Shell offset: "+shellOffset)
 		if(e.keyCode === 13) { //ENTER
-			e.preventDefault();
-			shellOffset += 11;
+			execute();
 			lineOffset = 10;
 			setCaret();
-			execute();
 			shell.value += "\nmoeshell> ";
+			shell.scrollTop = shell.scrollHeight;
 		} else if (e.keyCode === 37) { //LEFT
-			e.preventDefault();
 			shellOffset--;
 			lineOffset--;
 			if(lineOffset <= 10) {
@@ -47,7 +45,6 @@ $(document).ready(function() {
 			};
 			setCaret();
 		} else if (e.keyCode === 8) { //ESCAPE
-			e.preventDefault();
 			shellOffset--;
 			lineOffset--;
 			if(lineOffset <= 10) {
@@ -55,17 +52,17 @@ $(document).ready(function() {
 				lineOffset++;
 				setCaret();
 			} else shell.value = shell.value.substring(0, shellOffset-1);
-		} else {
+		} else if(e.keyCode >= 48 && e.keyCode <= 90 || e.keyCode === 32){ //alphanumeric, punctuation, or space
 			shellOffset++;
 			lineOffset++;
 		};
+
+		if(!(e.keyCode >= 48 && e.keyCode <= 90 || e.keyCode === 32))
+			e.preventDefault();
 	});
 
 	$shell.click(function() {
-		console.log(shellOffset)
-		//if()
 		setCaret();
-		//set the caret index
 	});
 });
 
@@ -98,8 +95,66 @@ var loadProfile = function() {
 	Executes when the user presses enter
 */
 var execute = function() {
-
+	var cmd = shell.value.substring(shell.value.lastIndexOf("moeshell> ")+10, shell.value.length);
+	var out = "";
+	if(cmd.length > 0) {
+		switch(cmd) {
+			case "hello":
+				out = "\nWelcome to the Moe Shell! How are you?";
+				break;
+			case "help":
+				out = "\nCommands:"
+					+ "\nhello	  Greeting"
+					+ "\nhelp	  Displays a list of commands"
+					+ "\ngithub    Opens my github profile"
+					+ "\nlinkedin  Opens my LinkedIn profile"
+					+ "\nresume    Opens my resume"
+					+ "\nemail	  Prints out my email"
+					+ "\nclear	  Clears the terminal"
+					+ "\necho	  Prints the argument to standard output"
+					+ "\ndate	  Prints out the date and time";
+				break;
+			case "github":
+				out = "\nOpening gihub profile...";
+				urlopen("https://github.com/mac-adam-chaieb");
+				break;
+			case "linkedin":
+				out = "\nOpening LinkedIn page...";
+				urlopen("https://www.linkedin.com/in/mohamedadamchaieb");
+				break;
+			case "email":
+				out += "\nEmails:\nmohamed.chaieb@mail.mcgill.ca\nmac@hackmcgill.com"
+				break;
+			case "date":
+				out += "\n"+new Date();
+				break;
+			case "resume":
+				out = "\nOpening resume...";
+				urlopen("file:///home/moe/Hacking/Projects/mac-adam-chaieb.github.io/resume.pdf");
+				break;
+			case "clear":
+				shell.value = "";
+				out = "Welcome to the Moe Shell! "+new Date()
+					+ "\nEnter 'help' to get a list of commands";
+				break;
+			case "exit":
+				window.close();
+				break;
+			default:
+				out = "\nCommand not found. Enter 'help' for a list of commands";
+				break;
+		};
+		if(cmd.indexOf("echo") === 0)
+			out = "\n"+cmd.substring(cmd.indexOf("echo")+5, cmd.length);	
+	};
+	shell.value += out;
+	shellOffset = shell.value.length+11;
+	console.log(cmd);
 };
+
+function urlopen(url) {
+  window.open(url,'_blank');
+}
 
 (function ($, undefined) {
     $.fn.getCursorPosition = function() {

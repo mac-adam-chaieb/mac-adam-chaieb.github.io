@@ -130,7 +130,7 @@ var execute = function() {
 				break;
 			case "resume":
 				out = "\nOpening resume...";
-				urlopen("file:///home/moe/Hacking/Projects/mac-adam-chaieb.github.io/resume.pdf");
+				urlopen("http://themoechaieb.com/resume.pdf");
 				break;
 			case "clear":
 				shell.value = "";

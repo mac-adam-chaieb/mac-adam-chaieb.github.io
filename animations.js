@@ -28,8 +28,6 @@ $(document).ready(function() {
 	});
 
 	$shell.keydown(function(e) {
-		console.log("Line offset: "+lineOffset)
-		console.log("Shell offset: "+shellOffset)
 		if(e.keyCode === 13) { //ENTER
 			execute();
 			lineOffset = 10;
@@ -149,7 +147,6 @@ var execute = function() {
 	};
 	shell.value += out;
 	shellOffset = shell.value.length+11;
-	console.log(cmd);
 };
 
 function urlopen(url) {

@@ -4,7 +4,9 @@
 *
 *****************************************************/
 
-//elements to add
+/*
+	jQuery elements
+*/
 var $name = $("<h1 id='name'>Mohamed Adam Chaieb</h1>");
 var $pic = $("<img id='profile' src='./profile.jpg'></img>");
 var $header = $("<p id='head'>I like to hack things.</p>");
@@ -15,16 +17,18 @@ var $bar = $("<div id='bar'><a href='https://www.linkedin.com/in/mohamedadamchai
 var $shell = $("<textarea id='shell' spellcheck='false'>Welcome to the Moe Shell! "+new Date()
 	+ "\nEnter 'help' to get a list of commands"
 	+ "\nmoeshell> </textarea>");
+var shell;
 
-//the index of
+/*
+	Terminal indices
+*/
 var shellOffset = 0;
 var lineOffset = 10;
-var shell;
 
 $(document).ready(function() {
 	$(".button").click(function() {
 		$('.button').fadeOut(300);
-		$('#greeting').fadeOut(300, removeElements);
+		$('#greeting').fadeOut(300, removeWelcome);
 	});
 
 	$shell.keydown(function(e) {
@@ -32,7 +36,7 @@ $(document).ready(function() {
 			execute();
 			lineOffset = 10;
 			setCaret();
-			shell.value += "\nmoeshell> ";
+			shell.value += "moeshell> ";
 			shell.scrollTop = shell.scrollHeight;
 		} else if (e.keyCode === 37) { //LEFT
 			shellOffset--;
@@ -64,14 +68,18 @@ $(document).ready(function() {
 	});
 });
 
-//removes the greeting and start button, loads the profile
-var removeElements = function() {
+/*
+	Removes the greeting and start button, loads the profile
+*/
+var removeWelcome = function() {
 	$(".button").remove();
 	$("#greeting").remove();
 	loadProfile();
 };
 
-//load profile elements
+/*
+	Load profile elements
+*/
 var loadProfile = function() {
 	$('body').append($pic);
 	$('body').append($name);
@@ -95,10 +103,12 @@ var loadProfile = function() {
 var execute = function() {
 	var cmd = shell.value.substring(shell.value.lastIndexOf("moeshell> ")+10, shell.value.length);
 	var out = "";
+	// If there is something to parse
 	if(cmd.length > 0) {
+		//Match the command, perform an action, set the output
 		switch(cmd) {
 			case "hello":
-				out = "\nWelcome to the Moe Shell! How are you?";
+				out = "\nWelcome to the Moe Shell! How are you?\n";
 				break;
 			case "help":
 				out = "\nCommands:"
@@ -110,65 +120,52 @@ var execute = function() {
 					+ "\nemail	  Prints out my email"
 					+ "\nclear	  Clears the terminal"
 					+ "\necho	  Prints the argument to standard output"
-					+ "\ndate	  Prints out the date and time";
+					+ "\ndate	  Prints out the date and time\n";
 				break;
 			case "github":
-				out = "\nOpening gihub profile...";
+				out = "\nOpening gihub profile...\n";
 				urlopen("https://github.com/mac-adam-chaieb");
 				break;
 			case "linkedin":
-				out = "\nOpening LinkedIn page...";
+				out = "\nOpening LinkedIn page...\n";
 				urlopen("https://www.linkedin.com/in/mohamedadamchaieb");
 				break;
 			case "email":
-				out += "\nEmails:\nmohamed.chaieb@mail.mcgill.ca\nmac@hackmcgill.com"
+				out += "\nEmails:\nmohamed.chaieb@mail.mcgill.ca\nmac@hackmcgill.com\n"
 				break;
 			case "date":
-				out += "\n"+new Date();
+				out += "\n"+new Date()+"\n";
 				break;
 			case "resume":
-				out = "\nOpening resume...";
+				out = "\nOpening resume...\n";
 				urlopen("http://themoechaieb.com/resume.pdf");
 				break;
 			case "clear":
 				shell.value = "";
-				out = "Welcome to the Moe Shell! "+new Date()
-					+ "\nEnter 'help' to get a list of commands";
+				out = "";
 				break;
 			case "exit":
 				window.close();
 				break;
 			default:
-				out = "\nCommand not found. Enter 'help' for a list of commands";
+				out = "\nCommand not found. Enter 'help' for a list of commands\n";
 				break;
 		};
 		if(cmd.indexOf("echo") === 0)
-			out = "\n"+cmd.substring(cmd.indexOf("echo")+5, cmd.length);	
-	};
+			out = "\n"+cmd.substring(cmd.indexOf("echo")+5, cmd.length)+"\n";	
+	// Otherwise just skip a line
+	} else out = "\n";
 	shell.value += out;
 	shellOffset = shell.value.length+11;
 };
 
+/*
+	Helper methods
+*/
+
 function urlopen(url) {
   window.open(url,'_blank');
 }
-
-(function ($, undefined) {
-    $.fn.getCursorPosition = function() {
-        var el = $(this).get(0);
-        var pos = 0;
-        if('selectionStart' in el) {
-            pos = el.selectionStart;
-        } else if('selection' in document) {
-            el.focus();
-            var Sel = document.selection.createRange();
-            var SelLength = document.selection.createRange().text.length;
-            Sel.moveStart('character', -el.value.length);
-            pos = Sel.text.length - SelLength;
-        }
-        return pos;
-    }
-})(jQuery);
 
 function setSelectionRange(input, selectionStart, selectionEnd) {
   if (input.setSelectionRange) {

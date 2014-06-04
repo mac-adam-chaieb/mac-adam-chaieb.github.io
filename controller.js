@@ -91,6 +91,7 @@ var loadProfile = function() {
 		$('#bar').css("display", "block");
 		$('body').append($shell);
 		$("#shell").fadeIn(500);
+		$("#shell").css("display", "block");
 		shell = document.getElementById("shell");
 		shellOffset = shell.value.length;
 	});

@@ -139,7 +139,7 @@ var execute = function() {
 				break;
 			case "resume":
 				out = "\nOpening resume...\n";
-				urlopen("http://themoechaieb.com/resume.pdf");
+				urlopen("http://themoe.me/resume.pdf");
 				break;
 			case "clear":
 				shell.value = "";

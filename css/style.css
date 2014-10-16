@@ -425,6 +425,7 @@
 		position: relative;
 		overflow: hidden;
 		width: 50em;
+		border-radius: 30px;
 	}
 
 	.panel

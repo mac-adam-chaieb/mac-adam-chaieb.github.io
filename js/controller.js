@@ -1,28 +1,35 @@
+/*****************************************************
+*
+*	Designed and programmed by Mohamed Adam Chaieb.
+*
+*****************************************************/
+
+/*
+	jQuery elements
+*/
+var $name = $("<h1 id='name'>Mohamed Adam Chaieb</h1>");
+var $pic = $("<img id='profile' src='./profile.jpg'></img>");
+var $header = $("<p id='head'>I like to hack things.</p>");
+var $bar = $("<div id='bar'><a href='https://www.linkedin.com/in/mohamedadamchaieb'><i class='fa fa-linkedin-square'></i></a>"
+	+ "<a href='mailto:mohamed.chaieb@mail.mcgill.ca'><i class='fa fa-envelope'></i></a>"
+	+ "<a href='./resume.pdf'><i class='fa fa-file-text'></i></a>"
+	+ "<a href='https://github.com/mac-adam-chaieb'><i class='fa fa-github-square'></i></a></div>");
+var $shell = $("<textarea id='shell' spellcheck='false'>Welcome to the Moe Shell! "+new Date()
+	+ "\nEnter 'help' to get a list of commands"
+	+ "\nmoeshell> </textarea>");
+var shell;
+
 /*
 	Terminal indices
 */
 var shellOffset = 0;
 var lineOffset = 10;
 
-$(document).ready(function(){
-    $(".mytitle").typed({
-      strings: titles,
-      typeSpeed: 60,
-      loop: true,
-      startDelay: 200,
-      backDelay: 1500,
-      showCursor: false
-    });
-
-    var titles = ['Hacker', 'McGill Student', 'Co-Founder of HackMcGill', 'Floor Fellow at McConnell Hall', 'Basketball Fan', 'Aspiring Entrepreneur', 'Bassist']
-	var $shell = $("#shell");
-	var shell = document.getElementById("shell");
-
-	shell.value = "Welcome to the Moe Shell! "+new Date()
-	+ "\nEnter 'help' to get a list of commands"
-	+ "\nmoeshell> ";
-
-	shellOffset = shell.value.length;
+$(document).ready(function() {
+	$(".button").click(function() {
+		$('.button').fadeOut(300);
+		$('#greeting').fadeOut(300, removeWelcome);
+	});
 
 	$shell.keydown(function(e) {
 		if(e.keyCode === 13) { //ENTER
@@ -52,7 +59,7 @@ $(document).ready(function(){
 			lineOffset++;
 		};
 
-		if(!(e.keyCode >= 48 && e.keyCode <= 90 || e.keyCode === 32 || e.keyCode == 39))
+		if(!(e.keyCode >= 48 && e.keyCode <= 90 || e.keyCode === 32))
 			e.preventDefault();
 	});
 
@@ -62,9 +69,39 @@ $(document).ready(function(){
 });
 
 /*
+	Removes the greeting and start button, loads the profile
+*/
+var removeWelcome = function() {
+	$(".button").remove();
+	$("#greeting").remove();
+	loadProfile();
+};
+
+/*
+	Load profile elements
+*/
+var loadProfile = function() {
+	$('body').append($pic);
+	$('body').append($name);
+	$('#profile').fadeIn(500, function() {
+		$('#name').fadeIn(500);
+		$('body').append($header);
+		$('body').append($bar);
+		$('#bar').fadeIn(500);
+		$('#bar').css("display", "block");
+		$('body').append($shell);
+		$("#shell").fadeIn(500);
+		$("#shell").css("display", "block");
+		shell = document.getElementById("shell");
+		shellOffset = shell.value.length;
+	});
+	$('#profile').css("display", "block");
+};
+
+/*
 	Executes when the user presses enter
 */
-window.execute = function() {
+var execute = function() {
 	var cmd = shell.value.substring(shell.value.lastIndexOf("moeshell> ")+10, shell.value.length);
 	var out = "";
 	// If there is something to parse
@@ -120,18 +157,18 @@ window.execute = function() {
 	// Otherwise just skip a line
 	} else out = "\n";
 	shell.value += out;
-	shellOffset = shell.value.length+10;
+	shellOffset = shell.value.length+11;
 };
 
 /*
 	Helper methods
 */
 
-window.urlopen = function(url) {
+function urlopen(url) {
   window.open(url,'_blank');
-};
+}
 
-window.setSelectionRange = function(input, selectionStart, selectionEnd) {
+function setSelectionRange(input, selectionStart, selectionEnd) {
   if (input.setSelectionRange) {
     input.focus();
     input.setSelectionRange(selectionStart, selectionEnd);
@@ -143,8 +180,8 @@ window.setSelectionRange = function(input, selectionStart, selectionEnd) {
     range.moveStart('character', selectionStart);
     range.select();
   }
-};
+}
 
-window.setCaret = function() {
-  setSelectionRange(shell, shellOffset, shellOffset);
-};
+function setCaret () {
+  setSelectionRange(document.getElementById("shell"), shellOffset, shellOffset);
+}

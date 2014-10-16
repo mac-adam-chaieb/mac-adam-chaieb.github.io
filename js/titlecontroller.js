@@ -1,3 +1,5 @@
+var titles = ['Hacker', 'McGill Student', 'Co-Founder of HackMcGill', 'Floor Fellow at McConnell Hall', 'Basketball Fan', 'Aspiring Entrepreneur', 'Bassist'];
+
 /*
 	Terminal indices
 */
@@ -14,8 +16,7 @@ $(document).ready(function(){
       showCursor: false
     });
 
-    var titles = ['Hacker', 'McGill Student', 'Co-Founder of HackMcGill', 'Floor Fellow at McConnell Hall', 'Basketball Fan', 'Aspiring Entrepreneur', 'Bassist']
-	var $shell = $("#shell");
+    var $shell = $("#shell");
 	var shell = document.getElementById("shell");
 
 	shell.value = "Welcome to the Moe Shell! "+new Date()

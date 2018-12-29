@@ -59,10 +59,6 @@
       position: relative;
     }
 
-      form {
-          margin-bottom: 0;
-        }
-
     .logo {
           position: absolute;
       top: 50%;
@@ -95,8 +91,16 @@
       color: white;
     }
 
-    .soundcloud {
-      height: 120px;
+    footer {
+      margin-bottom: 0;
+      height: 90px;
+    }
+
+    iframe.u-full-width.follow {
+      display: block;
+      padding-top: 45px;
+      margin: auto;
+      width: 108px;
     }
   </style>
   <script type="text/javascript">
@@ -126,7 +130,6 @@
       { "logo_colour": "#b12f7b", "background_colour": "#98a581" },
       { "logo_colour": "#2b1715", "background_colour": "#dea8ad" },
       { "logo_colour": "#f1eded", "background_colour": "#70918b" },
-      { "logo_colour": "#7a877d", "background_colour": "#5c8a91" },
       { "logo_colour": "#1faf7a", "background_colour": "#e1a118" },
       { "logo_colour": "#45b39c", "background_colour": "#66634a" },
       { "logo_colour": "#794213", "background_colour": "#2b2620" },
@@ -141,21 +144,17 @@
       { "logo_colour": "#3c3c41", "background_colour": "#5588b9" },
       { "logo_colour": "#dd522d", "background_colour": "#89a7aa" },
       { "logo_colour": "#f8f9fa", "background_colour": "#6c6f72" },
-      { "logo_colour": "#ac8e53", "background_colour": "#f24bcc" },
       { "logo_colour": "#1b1922", "background_colour": "#895520" },
       { "logo_colour": "#60d09c", "background_colour": "#3f2a16" },
       { "logo_colour": "#986e4b", "background_colour": "#b0a4c5" },
       { "logo_colour": "#716850", "background_colour": "#d77021" },
       { "logo_colour": "#273b19", "background_colour": "#ab7406" },
       { "logo_colour": "#4a695c", "background_colour": "#7f7414" },
-      { "logo_colour": "#7d88a6", "background_colour": "#6589a0" },
       { "logo_colour": "#fbfafb", "background_colour": "#f15a4a" },
       { "logo_colour": "#222e7c", "background_colour": "#4a6e87" },
       { "logo_colour": "#a08837", "background_colour": "#e9db83" },
-      { "logo_colour": "#455448", "background_colour": "#654140" },
       { "logo_colour": "#ada472", "background_colour": "#acc012" },
       { "logo_colour": "#9fb5c0", "background_colour": "#de5b51" },
-      { "logo_colour": "#e6ab24", "background_colour": "#d6483e" },
       { "logo_colour": "#cca916", "background_colour": "#917d97" },
       { "logo_colour": "#f5ce61", "background_colour": "#f8dfba" },
       { "logo_colour": "#a67238", "background_colour": "#e1bac1" },
@@ -203,74 +202,65 @@
       { "logo_colour": "#f2c169", "background_colour":"#e17b48 " }
     ]
 
-    window.onload = function() {
-      var random_palette = colours[Math.floor(Math.random() * colours.length)];
+    document.onreadystatechange = function() {
+      if (document.readyState === 'interactive') {
+        var random_palette = colours[Math.floor(Math.random() * colours.length)];
 
-      document.querySelector('body').style.backgroundColor = random_palette['background_colour'];
-      document.querySelector('.button').style.backgroundColor = random_palette['logo_colour'];
-      document.querySelector('.button').style.borderColor = random_palette['logo_colour'];
-      document.querySelector('.button').style.color = random_palette['background_colour'];
-      document.querySelectorAll('i').forEach(function(icon) {
-        icon.style.color = random_palette['logo_colour'];
-        icon.addEventListener('mouseover', function(event) {
-          event.target.color = 'white';
+        document.querySelector('body').style.backgroundColor = random_palette['background_colour'];
+
+        document.querySelectorAll('i').forEach(function(icon) {
+          icon.style.color = random_palette['logo_colour'];
+          icon.addEventListener('mouseover', function(event) {
+            event.target.color = 'white';
+          })
         })
-      })
-      document.querySelectorAll('rect').forEach(function(icon) {
-        icon.style.fill = random_palette['logo_colour'];
-      })
-      document.querySelectorAll('circle').forEach(function(icon) {
-        icon.style.stroke = random_palette['logo_colour'];
-        icon.style.fill = random_palette['background_colour'];
-      })
+        document.querySelectorAll('rect').forEach(function(icon) {
+          icon.style.fill = random_palette['logo_colour'];
+        })
+        document.querySelectorAll('circle').forEach(function(icon) {
+          icon.style.stroke = random_palette['logo_colour'];
+          icon.style.fill = random_palette['background_colour'];
+        })
+      }
     }
   </script>
 </head>
 
 <body>
-    <div class='container'>
-        <div class='row navbar'>
-            <a class='offset-by-two two columns' href="https://instagram.com/moechaieb"><i class='fab fa-instagram'></i></a>
-            <a class='two columns' href="https://open.spotify.com/artist/6SCVEkz0Y5MQDC8GKxJgWJ"><i class='fab fa-spotify'></i></a>
-            <a class='two columns' href="https://soundcloud.com/moechaieb"><i class='fab fa-soundcloud'></i></a>
-            <a class='two columns' href="https://twitter.com/moechaieb"><i class='fab fa-twitter'></i></a>
-        </div>
-        <div class='row main'>
-            <div class='logo offset-by-three six columns'>
-                <svg viewbox="0 0 270 120">
-                    <circle class='foobar' cx="60" cy="60" r="50"/>
-                    <circle class='foobar' cx="210" cy="60" r="50"/>
-
-                    <rect class='foobar' x="60" y="1" width="150" height="18"/>
-                    <rect class='foobar' x="60" y="101" width="150" height="18"/>
-                    <rect class='foobar' x="40" y="50" width="40" height="18">
-                        <animateTransform attributeName="transform"
-                                type="rotate"
-                                from="0 60 59" to="360 60 59"
-                                begin="0s" dur="8s"
-                                repeatCount="indefinite"
-                      />
-                    </rect>
-                    <rect class='foobar' x="190" y="50" width="40" height="18">
-                        <animateTransform
-                          attributeName="transform"
-                    type="rotate"
-                    from="0 210 59" to="360 210 59"
-                    begin="0s" dur="8s"
-                    repeatCount="indefinite"
-                  />
-                    </rect>
-                </svg>
-            </div>
-        </div>
-    <form action="https://foobarmusic.us18.list-manage.com/subscribe/post?u=32c6cec487f96c5608ff25323&amp;id=09f96e1303" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate row email-form" target="_blank" novalidate>
-            <input type="email" value="" name="EMAIL" class="email offset-by-three three columns" id="mce-EMAIL" placeholder="Email" required>
-            <input type="submit" value="Sign up" name="subscribe" id="mc-embedded-subscribe" class="button button-primary three columns">
-        </form>
-        <div class='row'>
-            <iframe class='soundcloud offset-by-three six columns' scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/327395198&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>
-        </div>
+  <div class='container'>
+    <div class='row navbar'>
+      <a class='offset-by-two two columns' href="https://instagram.com/moechaieb"><i class='fab fa-instagram'></i></a>
+      <a class='two columns' href="https://open.spotify.com/artist/6SCVEkz0Y5MQDC8GKxJgWJ"><i class='fab fa-spotify'></i></a>
+      <a class='two columns' href="https://soundcloud.com/moechaieb"><i class='fab fa-soundcloud'></i></a>
+      <a class='two columns' href="https://twitter.com/moechaieb"><i class='fab fa-twitter'></i></a>
     </div>
+
+    <div class='row main'>
+      <div class='logo offset-by-three six columns'>
+        <svg viewbox="0 0 270 120">
+          <circle class='foobar' cx="60" cy="60" r="50"/>
+          <circle class='foobar' cx="210" cy="60" r="50"/>
+
+          <rect class='foobar' x="60" y="1" width="150" height="18"/>
+          <rect class='foobar' x="60" y="101" width="150" height="18"/>
+          <rect class='foobar' x="40" y="50" width="40" height="18">
+            <animateTransform attributeName="transform" type="rotate" from="0 60 59" to="360 60 59" begin="0s" dur="8s" repeatCount="indefinite" />
+          </rect>
+          <rect class='foobar' x="190" y="50" width="40" height="18">
+            <animateTransform attributeName="transform" type="rotate" from="0 210 59" to="360 210 59" begin="0s" dur="8s" repeatCount="indefinite" />
+          </rect>
+        </svg>
+      </div>
+    </div>
+
+    <div class='row footer'>
+      <iframe class='u-full-width follow' src="https://open.spotify.com/follow/1/?uri=spotify:artist:6SCVEkz0Y5MQDC8GKxJgWJ&size=basic&theme=dark&show-count=0" height="90" scrolling="no" frameborder="0" style="border:none; overflow:hidden;" allowtransparency="true"></iframe>
+    </div>
+
+    <div class='row footer'>
+      <iframe class='offset-by-three six columns' src="https://open.spotify.com/embed/track/6V9JEKcfGN851JGE8taQPn" height="90" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+    </div>
+  </div>
 </body>
 </html>
 

@@ -1,0 +1,86 @@
+body, .container {
+  height: 100%;
+  width: 95%;
+  max-width: 1000px;
+  margin: auto;
+  background-color: black;
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-weight: 300;
+}
+
+.row {
+  display: block;
+}
+
+.navbar, .footer {
+  width: 100%;
+  height: 125px;
+  box-sizing: border-box;
+  padding-top: 50px;
+  padding-bottom: 25px;
+}
+
+.footer {
+  padding-top: 25px;
+  padding-bottom: 50px;
+}
+
+.logo, svg, nav, .email {
+  height: 100%;
+}
+
+nav > a {
+  color: white;
+  height: 50px;
+  display: inline-block;
+  margin-left: 7px;
+  margin-right: 7px;
+}
+
+.navbar a i, .footer a i {
+  display: inline-block;
+  font-size: 30px;
+  line-height: 50px;
+  vertical-align: middle;
+}
+
+a:hover, .email > a {
+  color: #e7530b;
+}
+
+img {
+  width: 100%;
+}
+
+.email > a {
+  line-height: 50px;
+}
+
+@media (max-width: 550px) {
+  .navbar .links nav a:not(:last-child) {
+    display: none;
+  }
+
+  .footer {
+    height: 150px;
+  }
+}
+
+@media (min-width: 550px) {
+  .navbar .links {
+    display: inline-block;
+  }
+
+  .footer {
+    height: 125px;
+  }
+}
+
+.photo, .soundcloud, .store, .footer {
+  padding-top: 25px;
+  padding-bottom: 25px;
+}
+
+.center-child {
+  text-align: center;
+}

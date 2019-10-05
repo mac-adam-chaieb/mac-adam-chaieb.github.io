@@ -5,22 +5,28 @@
 <!--[if IE 9 ]><html class="ie9 no-js"> <![endif]-->
 <!--[if (gt IE 9)|!(IE)]><!--> <html> <!--<![endif]-->
 <head>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-148355162-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-148355162-1');
+  </script>
 
   <!-- Basic page needs ================================================== -->
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <meta name="google-site-verification" content="PoZqXOVgk7-_zLNAAw2XyTnPZsUI4glpKc0V6UKb0Uc" />
-  <meta property="og:title" content="Foobar" />
+  <meta property="og:title" content="Moe Chaieb | Music Producer" />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://foobarmusic.com" />
-  <meta property="og:description" content="Foobar | Producer. Multi-instrumentalist." />
+  <meta property="og:url" content="https://moechaieb.com" />
+  <meta property="og:description" content="Moe Chaieb | Producer and Multi-instrumentalist from Montreal, Canada." />
   <meta property="og:image" content="https://cdn.shopify.com/s/files/1/0986/2442/t/9/assets/og_image.png?15232233655743890511" />
-
-  <link rel="shortcut icon" href="{{ 'favicon.png' | asset_url }}" type="image/png" />
 
   <!-- Title and description ================================================== -->
   <title>Moe Chaieb</title>
-  <meta name="description" content="Moe Chaieb's homepage">
+  <meta name="description" content="Moe Chaieb | Producer. Multi-instrumentalist.">
 
   <!-- Helpers ================================================== -->
   <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -28,233 +34,64 @@
   <!-- CSS ================================================== -->
   <link rel="stylesheet" type="text/css" href="css/skeleton.css">
   <link rel="stylesheet" type="text/css" href="css/normalize.css">
+  <link rel="stylesheet" type="text/css" href="css/custom.css">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
-
-  <style type="text/css">
-      html {
-          min-height: 400px;
-          height: 100%;
-        }
-        body, .container {
-          height: 100%;
-          min-height: 100%;
-        }
-
-    circle.foobar {
-      fill: white;
-      stroke: black;
-      stroke-width: 18px;
-    }
-
-    rect.foobar {
-      fill: black;
-    }
-
-    .row {
-      display: block;
-    }
-
-    .main {
-      height: 70%;
-      position: relative;
-    }
-
-    .logo {
-      position: absolute;
-      top: 65%;
-      transform: translateY(-65%);
-    }
-
-    .navbar {
-      height: 8%;
-      padding: 1% 0;
-    }
-
-    .navbar a {
-            width: 25%;
-      display: inline-block;
-      text-align: center;
-    }
-
-    .navbar div {
-      display: inline-block;
-    }
-
-    .navbar a i {
-      display: inline-block;
-      font-size: 3em;
-      line-height: 3em;
-      vertical-align: middle;
-    }
-
-    footer {
-      margin-bottom: 0;
-      height: 90px;
-    }
-
-    iframe.u-full-width.follow {
-      display: block;
-      padding-top: 45px;
-      margin: auto;
-      width: 108px;
-    }
-  </style>
-  <script type="text/javascript">
-    var colours = [
-      { "logo_colour": "#afbcb8", "background_colour": "#c19f98" },
-      { "logo_colour": "#f5f6f6", "background_colour": "#95a4a1" },
-      { "logo_colour": "#8cbb4b", "background_colour": "#232d44" },
-      { "logo_colour": "#db361f", "background_colour": "#d6364a" },
-      { "logo_colour": "#4e42a8", "background_colour": "#1d2a3d" },
-      { "logo_colour": "#9f9970", "background_colour": "#86b0ac" },
-      { "logo_colour": "#5b4039", "background_colour": "#fefdfc" },
-      { "logo_colour": "#73a773", "background_colour": "#187a87" },
-      { "logo_colour": "#5a7b8e", "background_colour": "#9a6c3a" },
-      { "logo_colour": "#207390", "background_colour": "#90533c" },
-      { "logo_colour": "#444918", "background_colour": "#5d7d78" },
-      { "logo_colour": "#14566a", "background_colour": "#2f5e41" },
-      { "logo_colour": "#261d27", "background_colour": "#44253b" },
-      { "logo_colour": "#815124", "background_colour": "#a0d0bb" },
-      { "logo_colour": "#46707f", "background_colour": "#4e7ec2" },
-      { "logo_colour": "#811f23", "background_colour": "#dde4e2" },
-      { "logo_colour": "#cfdae6", "background_colour": "#81775a" },
-      { "logo_colour": "#b6c19d", "background_colour": "#8d6c40" },
-      { "logo_colour": "#aea274", "background_colour": "#76a090" },
-      { "logo_colour": "#f4da6e", "background_colour": "#90b9b7" },
-      { "logo_colour": "#d0d2cc", "background_colour": "#9c934b" },
-      { "logo_colour": "#312123", "background_colour": "#dbc88f" },
-      { "logo_colour": "#b12f7b", "background_colour": "#98a581" },
-      { "logo_colour": "#2b1715", "background_colour": "#dea8ad" },
-      { "logo_colour": "#f1eded", "background_colour": "#70918b" },
-      { "logo_colour": "#1faf7a", "background_colour": "#e1a118" },
-      { "logo_colour": "#45b39c", "background_colour": "#66634a" },
-      { "logo_colour": "#794213", "background_colour": "#2b2620" },
-      { "logo_colour": "#944081", "background_colour": "#a37563" },
-      { "logo_colour": "#89819a", "background_colour": "#c1c3af" },
-      { "logo_colour": "#4e6d78", "background_colour": "#ec7e7f" },
-      { "logo_colour": "#f2efeb", "background_colour": "#c7bd83" },
-      { "logo_colour": "#eb5ed6", "background_colour": "#a38ca6" },
-      { "logo_colour": "#e3a1d9", "background_colour": "#833a4e" },
-      { "logo_colour": "#d47a1d", "background_colour": "#fcdb80" },
-      { "logo_colour": "#f6f6f7", "background_colour": "#3c2e23" },
-      { "logo_colour": "#3c3c41", "background_colour": "#5588b9" },
-      { "logo_colour": "#dd522d", "background_colour": "#89a7aa" },
-      { "logo_colour": "#f8f9fa", "background_colour": "#6c6f72" },
-      { "logo_colour": "#1b1922", "background_colour": "#895520" },
-      { "logo_colour": "#60d09c", "background_colour": "#3f2a16" },
-      { "logo_colour": "#986e4b", "background_colour": "#b0a4c5" },
-      { "logo_colour": "#716850", "background_colour": "#d77021" },
-      { "logo_colour": "#273b19", "background_colour": "#ab7406" },
-      { "logo_colour": "#4a695c", "background_colour": "#7f7414" },
-      { "logo_colour": "#fbfafb", "background_colour": "#f15a4a" },
-      { "logo_colour": "#222e7c", "background_colour": "#4a6e87" },
-      { "logo_colour": "#a08837", "background_colour": "#e9db83" },
-      { "logo_colour": "#ada472", "background_colour": "#acc012" },
-      { "logo_colour": "#9fb5c0", "background_colour": "#de5b51" },
-      { "logo_colour": "#cca916", "background_colour": "#917d97" },
-      { "logo_colour": "#f5ce61", "background_colour": "#f8dfba" },
-      { "logo_colour": "#a67238", "background_colour": "#e1bac1" },
-      { "logo_colour": "#f5f4f4", "background_colour": "#b5c7be" },
-      { "logo_colour": "#cd460c", "background_colour": "#baded9" },
-      { "logo_colour": "#e6c465", "background_colour": "#648897" },
-      { "logo_colour": "#382f22", "background_colour": "#35364f" },
-      { "logo_colour": "#8a9f87", "background_colour": "#6f8aad" },
-      { "logo_colour": "#1a171b", "background_colour": "#957f68" },
-      { "logo_colour": "#f7f9f9", "background_colour": "#221d20" },
-      { "logo_colour": "#28586c", "background_colour": "#d1bb62" },
-      { "logo_colour": "#231733", "background_colour": "#d9ca96" },
-      { "logo_colour": "#cf3b11", "background_colour": "#41773a" },
-      { "logo_colour": "#62691b", "background_colour": "#a6bc92" },
-      { "logo_colour": "#1bb0d1", "background_colour": "#1c212d" },
-      { "logo_colour": "#97aa49", "background_colour": "#7193bd" },
-      { "logo_colour": "#f9f9f9", "background_colour": "#768e91" },
-      { "logo_colour": "#226d90", "background_colour": "#cb7246" },
-      { "logo_colour": "#cec1b7", "background_colour": "#8e9196" },
-      { "logo_colour": "#374842", "background_colour": "#844a3f" },
-      { "logo_colour": "#1e2f3e", "background_colour": "#8c89b2" },
-      { "logo_colour": "#15809c", "background_colour": "#cdcdc9" },
-      { "logo_colour": "#aa766a", "background_colour": "#cbceaf" },
-      { "logo_colour": "#d5c3ba", "background_colour": "#658e8c" },
-      { "logo_colour": "#765f60", "background_colour": "#bec8c5" },
-      { "logo_colour": "#c1c8e0", "background_colour": "#a7897f" },
-      { "logo_colour": "#533b1c", "background_colour": "#6f8d89" },
-      { "logo_colour": "#41d1ba", "background_colour": "#85472a" },
-      { "logo_colour": "#a42622", "background_colour": "#6e9bb2" },
-      { "logo_colour": "#577880", "background_colour": "#b1a1b3" },
-      { "logo_colour": "#31274d", "background_colour": "#60705b" },
-      { "logo_colour": "#783523", "background_colour": "#c0728a" },
-      { "logo_colour": "#af8a42", "background_colour": "#d0cbc0" },
-      { "logo_colour": "#dd6f9d", "background_colour": "#cf9f95" },
-      { "logo_colour": "#943daa", "background_colour": "#b8b5c6" },
-      { "logo_colour": "#558b72", "background_colour": "#d95621" },
-      { "logo_colour": "#86bbb9", "background_colour": "#8f9ce7" },
-      { "logo_colour": "#500f21", "background_colour": "#25829c" },
-      { "logo_colour": "#542719", "background_colour": "#86a2a6" },
-      { "logo_colour": "#eaeaeb", "background_colour": "#b33337" },
-      { "logo_colour": "#58500d", "background_colour": "#8e3c4b" },
-      { "logo_colour": "#874847", "background_colour": "#26182b" },
-      { "logo_colour": "#f6a30d", "background_colour": "#2f2d17" },
-      { "logo_colour": "#251d2b", "background_colour": "#959290" },
-      { "logo_colour": "#f2c169", "background_colour":"#e17b48 " }
-    ]
-
-    document.onreadystatechange = function() {
-      if (document.readyState === 'interactive') {
-        var random_palette = colours[Math.floor(Math.random() * colours.length)];
-
-        document.querySelector('body').style.backgroundColor = random_palette['background_colour'];
-
-        document.querySelectorAll('i').forEach(function(icon) {
-          icon.style.color = random_palette['logo_colour'];
-          icon.addEventListener('mouseover', function(event) {
-            event.target.color = 'white';
-          })
-        })
-        document.querySelectorAll('rect').forEach(function(icon) {
-          icon.style.fill = random_palette['logo_colour'];
-        })
-        document.querySelectorAll('circle').forEach(function(icon) {
-          icon.style.stroke = random_palette['logo_colour'];
-          icon.style.fill = random_palette['background_colour'];
-        })
-      }
-    }
-  </script>
 </head>
 
 <body>
   <div class='container'>
     <div class='row navbar'>
-      <a class='offset-by-two two columns' href="https://instagram.com/moechaieb"><i class='fab fa-instagram'></i></a>
-      <a class='two columns' href="https://open.spotify.com/artist/6SCVEkz0Y5MQDC8GKxJgWJ"><i class='fab fa-spotify'></i></a>
-      <a class='two columns' href="https://soundcloud.com/moechaieb"><i class='fab fa-soundcloud'></i></a>
-      <a class='two columns' href="https://twitter.com/moechaieb"><i class='fab fa-twitter'></i></a>
-    </div>
+      <div class='logo u-pull-left'>
+        <svg class="u-pull-left" preserveAspectRatio="xMidYMid" x="0" y="0" viewBox="0 0 135 60">
+          <circle class='logo-element' cx="30" cy="30" r="25" fill="black" stroke="white" stroke-width="9px"/>
+          <circle class='logo-element' cx="105" cy="30" r="25" fill="black" stroke="white" stroke-width="9px"/>
 
-    <div class='row main'>
-      <div class='logo offset-by-three six columns'>
-        <svg viewbox="0 0 270 120">
-          <circle class='foobar' cx="60" cy="60" r="50"/>
-          <circle class='foobar' cx="210" cy="60" r="50"/>
-
-          <rect class='foobar' x="60" y="1" width="150" height="18"/>
-          <rect class='foobar' x="60" y="101" width="150" height="18"/>
-          <rect class='foobar' x="40" y="50" width="40" height="18">
-            <animateTransform attributeName="transform" type="rotate" from="0 60 59" to="360 60 59" begin="0s" dur="8s" repeatCount="indefinite" />
+          <rect class='logo-element' x="30" y="0.5" width="75" height="9" fill="white"/>
+          <rect class='logo-element' x="30" y="50.5" width="75" height="9" fill="white"/>
+          <rect class='logo-element' x="20" y="25" width="20" height="9" fill="white">
+            <animateTransform attributeName="transform" type="rotate" from="0 30 29.5" to="360 30 29.5" begin="0s" dur="8s" repeatCount="indefinite" />
           </rect>
-          <rect class='foobar' x="190" y="50" width="40" height="18">
-            <animateTransform attributeName="transform" type="rotate" from="0 210 59" to="360 210 59" begin="0s" dur="8s" repeatCount="indefinite" />
+          <rect class='logo-element' x="95" y="25" width="20" height="9" fill="white">
+            <animateTransform attributeName="transform" type="rotate" from="0 105 29.5" to="360 105 29.5" begin="0s" dur="8s" repeatCount="indefinite" />
           </rect>
         </svg>
       </div>
+
+      <div class="links u-pull-right">
+        <nav class="u-pull-right">
+          <a class="icon" href="https://instagram.com/moechaieb" title="Instagram"><i class='fab fa-instagram'></i></a>
+          <a class="icon" href="https://youtube.com/moechaieb" title="Youtube"><i class='fab fa-youtube'></i></a>
+          <a class="icon" href="https://soundcloud.com/moechaieb" title="Soundcloud"><i class='fab fa-soundcloud'></i></a>
+          <a class="icon" href="https://twitter.com/moechaieb" title="Twitter"><i class='fab fa-twitter'></i></a>
+          <a class="icon" href="https://moechaieb.com/beatstore.html" title="Buy Beats" ><i class='fas fa-cart-plus'></i></a>
+        </nav>
+      </div>
     </div>
 
-    <div class='row footer'>
-      <iframe class='u-full-width follow' src="https://open.spotify.com/follow/1/?uri=spotify:artist:6SCVEkz0Y5MQDC8GKxJgWJ&size=basic&theme=dark&show-count=0" height="90" scrolling="no" frameborder="0" style="border:none; overflow:hidden;" allowtransparency="true"></iframe>
+    <div class='row photo'>
+      <div class="center-child ">
+        <img src="photo.jpg">
+      </div>
     </div>
 
+    <div class='row soundcloud'>
+      <iframe width="100%" height="450" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/users/35183640&color=%23ff5500&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>
+    </div>
+
+
     <div class='row footer'>
-      <iframe class='offset-by-two eight columns' src="https://open.spotify.com/embed/track/1Mq2VyII2CV6wcI9GJ9uwi" width="300" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+      <div class="links offset-by-four four columns center-child">
+        <nav>
+          <a class="icon" href="https://instagram.com/moechaieb" title="Instagram"><i class='fab fa-instagram'></i></a>
+          <a class="icon" href="https://youtube.com/moechaieb" title="Youtube"><i class='fab fa-youtube'></i></a>
+          <a class="icon" href="https://soundcloud.com/moechaieb" title="Soundcloud"><i class='fab fa-soundcloud'></i></a>
+          <a class="icon" href="https://twitter.com/moechaieb" title="Twitter"><i class='fab fa-twitter'></i></a>
+        </nav>
+      </div>
+
+      <div class='email offset-by-eight four-columns center-child'>
+        <a href="mailto:management@moechaieb.com">management@moechaieb.com</a>
+      </div>
     </div>
   </div>
 </body>

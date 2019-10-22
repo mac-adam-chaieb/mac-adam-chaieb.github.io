@@ -44,8 +44,13 @@ nav > a {
   vertical-align: middle;
 }
 
+.navbar a, .footer a {
+  text-decoration: none;
+}
+
 a:hover, .email > a {
   color: #e7530b;
+  transition: 0.2s;
 }
 
 img {
@@ -57,12 +62,14 @@ img {
 }
 
 @media (max-width: 550px) {
-  .navbar .links nav a:not(:last-child) {
-    display: none;
-  }
-
   .footer {
     height: 150px;
+  }
+}
+
+@media (max-width: 400px) {
+  .navbar .links nav a:not(:first-child) {
+    display: none;
   }
 }
 

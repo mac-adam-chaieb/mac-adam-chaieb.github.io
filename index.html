@@ -34,102 +34,8 @@
   <!-- CSS ================================================== -->
   <link rel="stylesheet" type="text/css" href="css/skeleton.css">
   <link rel="stylesheet" type="text/css" href="css/normalize.css">
+  <link rel="stylesheet" type="text/css" href="css/custom.css">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
-
-  <style type="text/css">
-    body, .container {
-      height: 100%;
-      width: 95%;
-      max-width: 1000px;
-      margin: auto;
-      background-color: black;
-      font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-      font-weight: 300;
-    }
-
-    .row {
-      display: block;
-    }
-
-    .navbar, .footer {
-      width: 100%;
-      height: 125px;
-      box-sizing: border-box;
-      padding-top: 50px;
-      padding-bottom: 25px;
-    }
-
-    .footer {
-      padding-top: 25px;
-      padding-bottom: 50px;
-    }
-
-    .logo, svg, nav, .email {
-      height: 100%;
-    }
-
-    nav > a {
-      color: white;
-      height: 50px;
-      display: inline-block;
-      margin-left: 7px;
-      margin-right: 7px;
-    }
-
-    .navbar a i, .footer a i {
-      display: inline-block;
-      font-size: 30px;
-      line-height: 50px;
-      vertical-align: middle;
-    }
-
-    a:hover, .email > a {
-      color: #e7530b;
-    }
-
-    img {
-      width: 100%;
-    }
-
-    .email > a {
-      line-height: 50px;
-    }
-
-    @media (max-width: 550px) {
-      .navbar .links {
-        display: none;
-      }
-
-      .navbar {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-
-      .footer {
-        height: 150px;
-      }
-    }
-
-    @media (min-width: 550px) {
-      .navbar .links {
-        display: inline-block;
-      }
-
-      .footer {
-        height: 125px;
-      }
-    }
-
-    .photo, .soundcloud, .footer {
-      padding-top: 25px;
-      padding-bottom: 25px;
-    }
-
-    .center-child {
-      text-align: center;
-    }
-  </style>
 </head>
 
 <body>
@@ -153,32 +59,32 @@
 
       <div class="links u-pull-right">
         <nav class="u-pull-right">
-          <a class="icon" href="https://instagram.com/moechaieb"><i class='fab fa-instagram'></i></a>
-          <a class="icon" href="https://youtube.com/moechaieb"><i class='fab fa-youtube'></i></a>
-          <a class="icon" href="https://soundcloud.com/moechaieb"><i class='fab fa-soundcloud'></i></a>
-          <a class="icon" href="https://twitter.com/moechaieb"><i class='fab fa-twitter'></i></a>
+          <a class="icon" href="https://instagram.com/moechaieb" title="Instagram"><i class='fab fa-instagram'></i></a>
+          <a class="icon" href="https://youtube.com/moechaieb" title="Youtube"><i class='fab fa-youtube'></i></a>
+          <a class="icon" href="https://soundcloud.com/moechaieb" title="Soundcloud"><i class='fab fa-soundcloud'></i></a>
+          <a class="icon" href="https://twitter.com/moechaieb" title="Twitter"><i class='fab fa-twitter'></i></a>
         </nav>
       </div>
     </div>
 
     <div class='row photo'>
       <div class="center-child ">
-        <img src="photo.jpg">
+        <img src="photo.png">
       </div>
     </div>
 
-    <div class='row soundcloud'>
-      <iframe width="100%" height="450" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/users/35183640&color=%23ff5500&auto_play=true&hide_related=false&show_user=true&show_reposts=false"></iframe>
+    <div class='row player'>
+      <iframe src="https://player.beatstars.com/?storeId=102713" scrolling="no" width="100%" height="600" style="max-width:1024px;" frameborder="0" marginheight="0" marginwidth="0"> -- none -- </iframe>
     </div>
 
 
     <div class='row footer'>
       <div class="links offset-by-four four columns center-child">
         <nav>
-          <a class="icon" href="https://instagram.com/moechaieb"><i class='fab fa-instagram'></i></a>
-          <a class="icon" href="https://youtube.com/moechaieb"><i class='fab fa-youtube'></i></a>
-          <a class="icon" href="https://soundcloud.com/moechaieb"><i class='fab fa-soundcloud'></i></a>
-          <a class="icon" href="https://twitter.com/moechaieb"><i class='fab fa-twitter'></i></a>
+          <a class="icon" href="https://instagram.com/moechaieb" title="Instagram"><i class='fab fa-instagram'></i></a>
+          <a class="icon" href="https://youtube.com/moechaieb" title="Youtube"><i class='fab fa-youtube'></i></a>
+          <a class="icon" href="https://soundcloud.com/moechaieb" title="Soundcloud"><i class='fab fa-soundcloud'></i></a>
+          <a class="icon" href="https://twitter.com/moechaieb" title="Twitter"><i class='fab fa-twitter'></i></a>
         </nav>
       </div>
 

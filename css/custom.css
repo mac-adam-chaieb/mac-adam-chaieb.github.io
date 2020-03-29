@@ -25,8 +25,13 @@ body, .container {
   padding-bottom: 50px;
 }
 
-.logo, svg, nav, .email {
+.logo, nav, .email {
   height: 100%;
+}
+
+svg {
+  margin-top: 5px;
+  height: 40px;
 }
 
 nav > a {

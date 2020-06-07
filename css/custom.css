@@ -8,8 +8,23 @@ body, .container {
   font-weight: 300;
 }
 
+p {
+  color: white;
+  display: inline-block;
+  margin: 0;
+}
+
 .row {
   display: block;
+}
+
+.email > p {
+  margin-right: 5px;
+}
+
+.announcement {
+  padding-top: 150px;
+  padding-bottom: 150px;
 }
 
 .navbar, .footer {

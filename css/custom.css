@@ -58,7 +58,6 @@ nav > a {
 }
 
 .navbar a i, .footer a i {
-  display: inline-block;
   font-size: 30px;
   line-height: 50px;
   vertical-align: middle;

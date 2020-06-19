@@ -1,6 +1,6 @@
 body, .container {
   height: 100%;
-  width: 95%;
+  width: 80%;
   max-width: 1000px;
   margin: auto;
   background-color: black;
@@ -81,6 +81,10 @@ img {
 }
 
 @media (max-width: 550px) {
+  body {
+    width: 95%;
+  }
+
   .footer {
     height: 150px;
   }

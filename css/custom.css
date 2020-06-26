@@ -1,7 +1,8 @@
 body, .container {
   height: 100%;
   width: 80%;
-  max-width: 1000px;
+  min-width: 400px;
+  max-width: 900px;
   margin: auto;
   background-color: black;
   font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
@@ -67,6 +68,17 @@ nav > a {
   text-decoration: none;
 }
 
+.index > p {
+  display: block;
+  line-height: 100%;
+  height: inherit;
+}
+
+a {
+  color: white;
+  vertical-align: middle;
+}
+
 a:hover, .email > a {
   color: #e7530b;
   transition: 0.2s;
@@ -74,6 +86,25 @@ a:hover, .email > a {
 
 img {
   width: 100%;
+}
+
+.index {
+  box-sizing: border-box;
+  padding-top: 50px;
+}
+
+.index a:hover > img {
+  opacity: 0.75;
+  transition: 0.2s;
+}
+
+.index a:hover > p {
+  color: #e7530b;
+  transition: 0.2s;
+}
+
+.cover {
+ width: 80%;
 }
 
 .email > a {
@@ -91,12 +122,20 @@ img {
 }
 
 @media (max-width: 400px) {
+  body {
+    width: 95%;
+  }
+
   .navbar .links nav a:not(:first-child) {
     display: none;
   }
 }
 
 @media (min-width: 550px) {
+  body {
+    width: 95%;
+  }
+
   .navbar .links {
     display: inline-block;
   }

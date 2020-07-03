@@ -7,10 +7,10 @@ body, .container {
   background-color: black;
   font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
   font-weight: 300;
+  color: white;
 }
 
 p {
-  color: white;
   display: inline-block;
   margin: 0;
 }
@@ -39,6 +39,10 @@ p {
 .footer {
   padding-top: 25px;
   padding-bottom: 50px;
+}
+
+.footer > p {
+  font-size: 90%;
 }
 
 .logo, nav, .email {
@@ -109,6 +113,26 @@ img {
 
 .email > a {
   line-height: 50px;
+  font-size: 90%;
+}
+
+.email > p {
+  line-height: 50px;
+  font-size: 90%;
+}
+
+.tracklist {
+  font-size: 90%;
+}
+
+.tracklist > ul {
+  padding-inline-start: 0;
+  list-style: none;
+}
+
+.tracklist > ul > li {
+  padding: 0;
+  margin: 0;
 }
 
 @media (max-width: 550px) {

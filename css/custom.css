@@ -97,6 +97,10 @@ img {
   padding-top: 50px;
 }
 
+.index a {
+  margin-bottom: 25px;
+}
+
 .index a:hover > img {
   opacity: 0.75;
   transition: 0.2s;

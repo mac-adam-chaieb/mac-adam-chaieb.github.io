@@ -82,7 +82,7 @@ a {
 }
 
 a:hover, .email > a {
-  color: #e7530b;
+  color: #01d482;
   transition: 0.2s;
 }
 
@@ -105,18 +105,18 @@ img {
 }
 
 .index a:hover > p {
-  color: #e7530b;
+  color: #01d482;
   transition: 0.2s;
 }
 
 .button:hover {
-  border-color: #e7530b;
-  background-color: #e7530b;
+  border-color: #01d482;
+  background-color: #01d482;
   color: white;
 }
 
 .button {
-  border-color: #e7530b;
+  border-color: #01d482;
   color: white;
 }
 

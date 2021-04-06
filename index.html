@@ -26,6 +26,18 @@
   <link rel="stylesheet" type="text/css" href="css/normalize.css">
   <link rel="stylesheet" type="text/css" href="css/custom.css">
   <link rel="stylesheet" type="text/css" href="css/fontello.css">
+  <script>(function(f,b){if(!b.__SV){var e,g,i,h;window.mixpanel=b;b._i=[];b.init=function(e,f,c){function g(a,d){var b=d.split(".");2==b.length&&(a=a[b[0]],d=b[1]);a[d]=function(){a.push([d].concat(Array.prototype.slice.call(arguments,0)))}}var a=b;"undefined"!==typeof c?a=b[c]=[]:c="mixpanel";a.people=a.people||[];a.toString=function(a){var d="mixpanel";"mixpanel"!==c&&(d+="."+c);a||(d+=" (stub)");return d};a.people.toString=function(){return a.toString(1)+".people (stub)"};i="disable time_event track track_pageview track_links track_forms track_with_groups add_group set_group remove_group register register_once alias unregister identify name_tag set_config reset opt_in_tracking opt_out_tracking has_opted_in_tracking has_opted_out_tracking clear_opt_in_out_tracking start_batch_senders people.set people.set_once people.unset people.increment people.append people.union people.track_charge people.clear_charges people.delete_user people.remove".split(" ");
+    for(h=0;h<i.length;h++)g(a,i[h]);var j="set set_once union unset remove delete".split(" ");a.get_group=function(){function b(c){d[c]=function(){call2_args=arguments;call2=[c].concat(Array.prototype.slice.call(call2_args,0));a.push([e,call2])}}for(var d={},e=["get_group"].concat(Array.prototype.slice.call(arguments,0)),c=0;c<j.length;c++)b(j[c]);return d};b._i.push([e,f,c])};b.__SV=1.2;e=f.createElement("script");e.type="text/javascript";e.async=!0;e.src="undefined"!==typeof MIXPANEL_CUSTOM_LIB_URL?
+    MIXPANEL_CUSTOM_LIB_URL:"file:"===f.location.protocol&&"//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js".match(/^\/\//)?"https://cdn.mxpnl.com/libs/mixpanel-2-latest.min.js":"//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js";g=f.getElementsByTagName("script")[0];g.parentNode.insertBefore(e,g)}})(document,window.mixpanel||[]);
+    mixpanel.init("c94dfffdf17b27c58247c2c0753005f1", {batch_requests: true})
+  </script>
+
+  <!-- Page Visits Tracker ================================================== -->
+  <script type="text/javascript">
+    window.onload = function() {
+      mixpanel.track("Visit", {});
+    }
+  </script>
 </head>
 
 <body>
@@ -37,13 +49,19 @@
 
       <div class="links u-pull-left">
         <nav class="u-pull-left">
-          <a class="icon" href="https://open.spotify.com/artist/6SCVEkz0Y5MQDC8GKxJgWJ" title="Spotify"><i class='icon-spotify'></i></a>
-            <a class="icon" href="https://instagram.com/moechaieb" title="Instagram"><i class='icon-instagram'></i></a>
-            </nav>
-<a class="icon" href="https://music.apple.com/ca/artist/moe-chaieb/1437167583" title="Apple Music"><i class='icon-apple'></i></a>
-            <a class="icon" href="https://soundcloud.com/moechaieb" title="Soundcloud"><i class='icon-soundcloud'></i></a>
+          <a class="icon" onclick="track_navbar_click(this);" button_name="Spotify" href="https://open.spotify.com/artist/6SCVEkz0Y5MQDC8GKxJgWJ" title="Spotify"><i class='icon-spotify'></i></a>
+          <a class="icon" onclick="track_navbar_click(this);" button_name="Instagram" href="https://instagram.com/moechaieb" title="Instagram"><i class='icon-instagram'></i></a>
+          <a class="icon" onclick="track_navbar_click(this);" button_name="Apple Music" href="https://music.apple.com/ca/artist/moe-chaieb/1437167583" title="Apple Music"><i class='icon-apple'></i></a>
+          <a class="icon" onclick="track_navbar_click(this);" button_name="Soundcloud" href="https://soundcloud.com/moechaieb" title="Soundcloud"><i class='icon-soundcloud'></i></a>
         </nav>
       </div>
+
+      <!-- Link-tree Tracker ================================================== -->
+      <script type="text/javascript">
+        function track_navbar_click(event) {
+          mixpanel.track("Navbar Click", { "to": event.attributes["button_name"].value });
+        }
+      </script>
 
       <div class='logo u-pull-right'>
         <svg preserveAspectRatio="xMidYMid" x="0" y="0" viewBox="0 0 135 60">
@@ -67,20 +85,28 @@
     </div>
 
     <div class='row link-tree center-child'>
-      <a class="button columns" href="https://open.spotify.com/album/38m6gmHOTslcnlh5e8zHeW">Stream "Here You Can Leave Me" Now</a>
-      <a class="button columns" href="https://soundcloud.com/moechaieb/sets/time-off-radio">Time Off Radio</a>
-      <a class="button columns" href="https://open.spotify.com/artist/6SCVEkz0Y5MQDC8GKxJgWJ">Spotify</a>
-      <a class="button columns" href="https://audiomack.com/moechaieb">Audiomack</a>
-      <a class="button columns" href="https://instagram.com/moechaieb">Instagram</a>
-      <a class="button columns" href="https://soundcloud.com/moechaieb">SoundCloud</a>
-      <a class="button columns" href="https://music.apple.com/ca/artist/moe-chaieb/1437167583">Apple Music</a>
+      <a class="button columns" onclick="track_link_tree_click(this);" button_name="Here You Can Leave Me EP" href="https://open.spotify.com/album/38m6gmHOTslcnlh5e8zHeW">Stream "Here You Can Leave Me" Now</a>
+      <a class="button columns" onclick="track_link_tree_click(this);" button_name="Spotify" href="https://open.spotify.com/artist/6SCVEkz0Y5MQDC8GKxJgWJ">Spotify</a>
+      <a class="button columns" onclick="track_link_tree_click(this);" button_name="Time Off Radio" href="https://soundcloud.com/moechaieb/sets/time-off-radio">Time Off Radio</a>
+      <a class="button columns" onclick="track_link_tree_click(this);" button_name="YouTube Music" href="https://music.youtube.com/channel/UC1nmCtf5sLki_5E7UykQZBg">YouTube Music</a>
+      <a class="button columns" onclick="track_link_tree_click(this);" button_name="Apple Music" href="https://music.apple.com/ca/artist/moe-chaieb/1437167583">Apple Music</a>
+      <a class="button columns" onclick="track_link_tree_click(this);" button_name="Soundcloud" href="https://soundcloud.com/moechaieb">SoundCloud</a>
+      <a class="button columns" onclick="track_link_tree_click(this);" button_name="Audiomack" href="https://audiomack.com/moechaieb">Audiomack</a>
+      <a class="button columns" onclick="track_link_tree_click(this);" button_name="Instagram" href="https://instagram.com/moechaieb">Instagram</a>
     </div>
+
+    <!-- Link-tree Tracker ================================================== -->
+    <script type="text/javascript">
+      function track_link_tree_click(event) {
+        mixpanel.track("Link Tree Click", { "to": event.attributes["button_name"].value });
+      }
+    </script>
 
     <div class='row player center-child'>
       <iframe src="https://open.spotify.com/embed/track/6Ul3ZavvDrf5F8YZ3lbJtt" width="100%" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
     </div>
 
-    <div class='footer'>
+<!--     <div class='footer'>
       <div class="row">
         <div class="links center-child">
           <nav>
@@ -91,7 +117,7 @@
             <a class="icon" href="https://youtube.com/moechaieb" title="Youtube"><i class='icon-youtube-play'></i></a>
           </nav>
         </div>
-      </div>
+      </div> -->
 
       <div class='email center-child'>
         <p>For enquiries:</p><a href="mailto:management@moechaieb.com">management@moechaieb.com</a>

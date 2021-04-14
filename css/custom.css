@@ -31,12 +31,11 @@ p {
   width: 100%;
   box-sizing: border-box;
   padding-top: 40px;
-  padding-bottom: 20px;
+  padding-bottom: 10px;
 }
 
-.footer {
-  padding-top: 25px;
-  padding-bottom: 50px;
+.email {
+  margin-bottom: 20px;
 }
 
 .footer > p {
@@ -158,7 +157,7 @@ img {
 }
 
 .link-tree {
-  margin-top: 15px;
+  margin-top: 10px;
 }
 
 .spotify-embed {
